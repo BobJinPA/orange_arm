@@ -1,0 +1,54 @@
+directional controller/joystick
+
+right
+type 3, code 00
+press down, val 255
+press up, val 127
+
+left
+type 3, code 00
+press down, val 0
+press up, val 127
+
+up
+type 3, code 01
+press down, val 0
+press up, val 127
+
+down
+type 3, code 01
+press down, val 255
+press up, val 127
+
+----
+
+Top right
+type 01, code 293
+press down, val 01
+press up, val 00
+
+Top left
+type 01, code 292
+press down, val 01
+press up, val 00
+
+
+A button
+type 1, code 289
+down  value 1
+up  value 0
+
+B button
+type 1, code 290
+down  value 1
+up  value 0
+
+X button
+type 1, code 288
+down  value 1
+up  value 0
+
+Y button
+type 1, code 291
+down  value 1
+up  value 0
