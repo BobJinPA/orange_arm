@@ -6,14 +6,15 @@ import maestro
 servo = maestro.Controller("/dev/ttyAMA0")
 gamepad = InputDevice('/dev/input/event0')
 INCREMENT = 20
-RESPONSIVENESS = 1
+ACCELERATION = 2
+SPEED = 10
 MIN = 4000
 CENTER = 6000
 MAX = 8000
 
 servo.setRange(0, MIN, MAX)
-servo.setAccel(0, RESPONSIVENESS)
-servo.setSpeed(0, RESPONSIVENESS)
+servo.setAccel(0, ACCELERATION)
+servo.setSpeed(0, SPEED)
 currentPosition = servo.getPosition(0)
 print ("Current position: " + str(currentPosition))
 servo.setTarget(0, CENTER)  # initial position
