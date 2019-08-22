@@ -25,7 +25,7 @@ print ("get max: ",  servo.getMax(0))
 for event in gamepad.read_loop():
     currentPosition = servo.getPosition(0)
     print ("Current position: " + str(currentPosition))
-    if not servo.isMoving():
+    if not servo.isMoving(0):
         if event.type == 1:
             if event.code == 293 and event.value == 1:
                 print ("Top Right Button: ", currentPosition + INCREMENT)
