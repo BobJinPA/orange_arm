@@ -10,6 +10,7 @@ INCREMENT = 20
 servo.setAccel(0, 4)
 servo.setSpeed(0, 10)
 servo.setTarget(0, 6000)  # initial position
+currentPosition = servo.getPosition(0)
 print ("Current position: " + str(currentPosition))
 print ("get min: " + servo.getMin())
 print ("get max: " + servo.getMax())
