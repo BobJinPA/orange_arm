@@ -1,38 +1,37 @@
-# This code is teaching how to read events from the USB controller
-
 from evdev import InputDevice, categorize, ecodes
-
 gamepad = InputDevice('/dev/input/event0')
 print (gamepad)
-
 for event in gamepad.read_loop():
-    # print ("TIMESTAMP: " + str(event.timestamp()))
-    # print ("CODE: " + str(event.code))
-    # print ("TYPE: " + str(event.type))
-    # print ("VALUE: " + str(event.value))
-    # print ("-------")
-    whatHappened = "I don't know"
-    if event.type == 3:
-        if event.code == 0 and event.value == 255:
-            print ("Right Direction")
-        elif event.code == 0 and event.value == 0:
-            print ("Left Direction")
-        elif event.code == 1 and event.value == 255:
-            print ("Down Direction")
-        elif event.code == 1 and event.value == 0:
-            print ("Up Direction")
+    print (event)
+	print (event.at)
+	print (event.code)
+	print (event.type)
+	print ("-------")
 
-    elif event.type == 1:
-        if event.code == 293 and event.value == 1:
-            print ("Top Right Button")
-        elif event.code == 292 and event.value == 1:
-            print ("Top Left Button")
+	if event.type == 3:
+		if event.code == 0 and event.value == 255:
+			whatHappened = "Right Direction"
+		elif event.code == 0 and event.value == 0:
+			whatHappened = "Left Direction"
+		elif event.code == 1 and event.value == 255:
+			whatHappened = "Down Direction"
+		elif event.code == 1 and event.value == 0:
+			whatHappened = "Up Direction"
 
-        elif event.code == 289 and event.value == 1:
-            print ("A Button")
-        elif event.code == 290 and event.value == 1:
-            print ("B Button")
-        elif event.code == 288 and event.value == 1:
-            print ("X Button")
-        elif event.code == 291 and event.value == 1:
-            print ("Y Button")
+	elif event.type == 1:
+		if event.code == 293 and event.value == 1:
+			whatHappened = "Top Right Button"
+		elif event.code == 292 and event.value == 1:
+			whatHappened = "Top Left Button"
+
+		elif event.code == 289 and event.value == 1:
+			whatHappened = "A Button"
+		elif event.code == 290 and event.value == 1:
+			whatHappened = "B Button"
+		elif event.code == 288 and event.value == 1:
+			whatHappened = "X Button"
+		elif event.code == 291 and event.value == 1:
+			whatHappened = "Y Button"
+
+	print (whatHappened)
+
