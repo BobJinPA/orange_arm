@@ -5,9 +5,9 @@ import maestro
 
 servo = maestro.Controller("/dev/ttyAMA0")
 gamepad = InputDevice('/dev/input/event0')
-INCREMENT = 20
-ACCELERATION = 2
-SPEED = 10
+INCREMENT = 100
+ACCELERATION = 20
+SPEED = 2
 MIN = 4000
 CENTER = 6000
 MAX = 8000
