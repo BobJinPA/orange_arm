@@ -12,8 +12,8 @@ servo.setSpeed(0, 10)
 servo.setTarget(0, 6000)  # initial position
 currentPosition = servo.getPosition(0)
 print ("Current position: " + str(currentPosition))
-print ("get min: " + servo.getMin())
-print ("get max: " + servo.getMax())
+print ("get min: " + servo.getMin(0))
+print ("get max: " + servo.getMax(0))
 
 for event in gamepad.read_loop():
     currentPosition = servo.getPosition(0)
