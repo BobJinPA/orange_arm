@@ -12,8 +12,8 @@ servo.setSpeed(0, 10)
 servo.setTarget(0, 6000)  # initial position
 currentPosition = servo.getPosition(0)
 print ("Current position: " + str(currentPosition))
-print ("get min: " + servo.getMin(0))
-print ("get max: " + servo.getMax(0))
+print ("get min: ", servo.getMin(0))
+print ("get max: ",  servo.getMax(0))
 
 for event in gamepad.read_loop():
     currentPosition = servo.getPosition(0)
@@ -23,10 +23,10 @@ for event in gamepad.read_loop():
     #     break
     if event.type == 1:
         if event.code == 293 and event.value == 1:
-            print ("Top Right Button: "+ currentPosition + INCREMENT)
+            print ("Top Right Button: ", currentPosition + INCREMENT)
             servo.setTarget(0, currentPosition + INCREMENT)
         elif event.code == 292 and event.value == 1:
-            print ("Top Left Button: " + currentPosition - INCREMENT)
+            print ("Top Left Button: ", currentPosition - INCREMENT)
             servo.setTarget(0, currentPosition - INCREMENT)
     print ("Current position: " + str(currentPosition))
 
